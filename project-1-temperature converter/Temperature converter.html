@@ -1,0 +1,85 @@
+<html>
+    <head> 
+        <title>Temperature converter</title>
+        <style>
+            body{
+               padding: 50px 100px;
+               background-color: blanchedalmond;
+            }
+            #container{
+               
+                text-align: center;
+                padding: 50px;
+                background-color:forestgreen;
+            }
+            h3{
+                text-align: center;
+                color:blanchedalmond;
+                
+            }
+            .temp{
+                display: inline-block;
+            }
+            label{
+                color: antiquewhite;
+            }
+
+        </style>
+    </head>
+   
+    <body>
+      <div id="container">
+        <h3>Temperature converter</h3>
+      <div class="temp">
+        <label>celius</label>
+       <input type='number' id="cel"  >
+      </div>
+      <div class="temp">
+        <label>Fahrenheit</label>
+        <input type='number' id="feh" />
+      </div>
+      </div>
+    </body>
+
+    <script>
+    let cel=document.getElementById('cel');
+    cel.addEventListener('input',function(){
+        console.log(this.value);
+        
+        let c=this.value;
+        let f;
+        
+        if(this.value==null || this.value==undefined || this.value=='')
+        {f=c;}
+
+         f=(c * 9/5) + 32;
+
+        if(!Number.isInteger(f))
+        f=f.toFixed(4);
+
+        feh.value=f;
+    })
+
+    // function convert(event){
+    //    let f=this.value;
+    //    console.log(f);
+    // }
+
+    let feh=document.getElementById('feh');
+    feh.addEventListener("input",function(){
+        let f=this.value;
+        let c;
+        if(this.value==null || this.value==undefined || this.value==' ')
+       { c=f;}
+
+        c=(f-32)*5/9;
+
+       if(!Number.isInteger(c))
+        c=c.toFixed(4);
+
+        
+
+        cel.value=c;
+    })
+    </script>
+</html>
