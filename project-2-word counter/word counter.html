@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content="width=device-width, initial-scale=1.0">
+    <title>word counter</title>
+
+    <style>
+        body{
+            padding: 150px 500px;
+        }
+        h2{
+            text-align: center;
+            background-color: burlywood;
+            color: brown;
+            padding: 10px;
+            font-size: 25px;
+            font-weight: bold;
+            margin:0px;
+        }
+        #input{
+            width: 98%;
+            height: 50px;
+            /* text-align: center; */
+           }
+        #count{
+            text-align: center;
+            background-color:burlywood;
+            color:brown;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 5px;
+            margin: 0px;
+        }
+    </style>
+    </head>
+
+    <body>
+        <h2 id="title">Word Counter</h2>
+        <input type='text' id='input'/>
+        <div id="count">
+        <span id="words">0 words</span> and
+        <span id="chars">0 characters</span> 
+    </div>
+
+    <script>
+        let text=document.getElementById('input');
+       text.addEventListener('input', function(){
+            var textArr=this.value;
+            var charlen=textArr.length;
+           
+            document.getElementById('chars').innerHTML=`${charlen} chars`;
+
+          var  trimArr=textArr.trim();
+            var splitArr=trimArr.split(' ');
+            var wordArr=splitArr.filter((elm)=>{if(elm !='') return elm;})
+            var wordlen=wordArr.length;
+            console.log(wordlen);
+            document.getElementById('words').innerHTML=`${wordlen} words`;
+        })
+    </script>
+    </body>
+</html>
+
