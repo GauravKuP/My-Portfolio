@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+}
+#container{
+    width: 100%;
+    position: relative;
+}
+.slide{
+    display: none;
+}
+ img{
+    width: 100%;
+    height: 100%;
+}
+.context{
+    color:antiquewhite;
+    background-color: saddlebrown;
+    position: absolute;
+    bottom:0px;
+    width: 100%;
+    padding: 10px 0px;
+    margin: 0px 0px;
+    text-align: center;
+    font-size:xx-large;
+    font-weight: bold;
+}
+/* img{
+    width: 100%;;
+} */
+
+.Arrow{
+    cursor: pointer;
+    position: absolute;
+    background-color:blanchedalmond ; 
+    top: 45%;
+    border-radius: 70%;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.Prev{
+    left:10px;
+}
+
+.Next{
+    right: 10px;
+}
+
+
